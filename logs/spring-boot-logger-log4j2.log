@@ -1,62 +1,62 @@
-2023-08-15 18:05:08,540 INFO o.s.b.StartupInfoLogger [restartedMain] Starting ServletInitializer using Java 17.0.8 on DESKTOP-NVJLB4S with PID 12468 (D:\intellij-workspace\WFM\target\classes started by PC in D:\intellij-workspace\WFM)
-2023-08-15 18:05:08,556 INFO o.s.b.SpringApplication [restartedMain] The following profiles are active: dev
-2023-08-15 18:05:08,557 DEBUG o.s.b.SpringApplication [restartedMain] Loading source class wfm.ServletInitializer
-2023-08-15 18:05:08,662 INFO o.s.b.l.DeferredLog [restartedMain] The Class-Path manifest attribute in C:\Users\PC\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.1.0.0\ojdbc8-21.1.0.0.jar referenced one or more files that do not exist: file:/C:/Users/PC/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.1.0.0/oraclepki.jar
-2023-08-15 18:05:08,665 DEBUG o.s.b.l.DeferredLog [restartedMain] Matching URLs for reloading : [file:/D:/intellij-workspace/WFM/target/classes/]
-2023-08-15 18:05:08,665 DEBUG o.s.b.l.DeferredLog [restartedMain] Included patterns for restart : []
-2023-08-15 18:05:08,666 DEBUG o.s.b.l.DeferredLog [restartedMain] Excluded patterns for restart : [/spring-boot-starter-[\w-]+/, /spring-boot/(bin|build|out)/, /spring-boot-starter/(bin|build|out)/, /spring-boot-devtools/(bin|build|out)/, /spring-boot-actuator/(bin|build|out)/, /spring-boot-autoconfigure/(bin|build|out)/]
-2023-08-15 18:05:08,667 INFO o.s.b.l.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2023-08-15 18:05:08,668 INFO o.s.b.l.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2023-08-15 18:05:08,669 DEBUG o.s.c.s.AbstractApplicationContext [restartedMain] Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@58654ee
-2023-08-15 18:05:10,169 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-08-15 18:05:10,315 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 131 ms. Found 7 JPA repository interfaces.
-2023-08-15 18:05:11,532 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [restartedMain] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@3d915153' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2023-08-15 18:05:11,544 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [restartedMain] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2023-08-15 18:05:12,157 DEBUG o.s.b.w.s.s.DocumentRoot [restartedMain] Code archive: C:\Users\PC\.m2\repository\org\springframework\boot\spring-boot\2.5.3\spring-boot-2.5.3.jar
-2023-08-15 18:05:12,158 DEBUG o.s.b.w.s.s.DocumentRoot [restartedMain] Code archive: C:\Users\PC\.m2\repository\org\springframework\boot\spring-boot\2.5.3\spring-boot-2.5.3.jar
-2023-08-15 18:05:12,159 DEBUG o.s.b.w.s.s.DocumentRoot [restartedMain] Document root: D:\intellij-workspace\WFM\src\main\webapp
-2023-08-15 18:05:12,253 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
-2023-08-15 18:05:12,277 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
-2023-08-15 18:05:12,279 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
-2023-08-15 18:05:12,281 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.50]
-2023-08-15 18:05:12,488 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
-2023-08-15 18:05:12,488 DEBUG o.s.b.w.s.c.ServletWebServerApplicationContext [restartedMain] Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
-2023-08-15 18:05:12,489 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 3820 ms
-2023-08-15 18:05:12,900 INFO o.h.j.i.u.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-08-15 18:05:12,986 INFO o.h.Version [restartedMain] HHH000412: Hibernate ORM core version 5.4.32.Final
-2023-08-15 18:05:13,234 INFO o.h.a.c.r.j.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-08-15 18:05:13,409 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Starting...
-2023-08-15 18:05:14,566 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
-2023-08-15 18:05:14,587 INFO o.h.d.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
-2023-08-15 18:05:20,611 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-08-15 18:05:20,622 INFO o.s.o.j.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-08-15 18:05:21,626 DEBUG o.s.c.e.PropertySourcesPropertyResolver [restartedMain] Found key 'numOfReq' in PropertySource 'Config resource 'class path resource [application-dev.properties]' via location 'optional:classpath:/'' with value of type String
-2023-08-15 18:05:21,627 DEBUG o.s.c.e.PropertySourcesPropertyResolver [restartedMain] Found key 'timeForReq' in PropertySource 'Config resource 'class path resource [application-dev.properties]' via location 'optional:classpath:/'' with value of type String
-2023-08-15 18:05:21,930 INFO o.s.s.w.a.p.j.WebXmlMappableAttributesRetriever [restartedMain] Retrieved role-name 'ROLE_USER' from web.xml
-2023-08-15 18:05:21,989 DEBUG o.s.b.w.s.ServletContextInitializerBeans [restartedMain] Mapping filters: springSecurityFilterChain urls=[/*] order=-100, filterRegistrationBean urls=[/*] order=2147483647, characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105, corsFilter urls=[/*] order=2147483647
-2023-08-15 18:05:21,990 DEBUG o.s.b.w.s.ServletContextInitializerBeans [restartedMain] Mapping servlets: dispatcherServlet urls=[/]
-2023-08-15 18:05:22,028 DEBUG o.s.w.f.GenericFilterBean [restartedMain] Filter 'requestContextFilter' configured for use
-2023-08-15 18:05:22,028 DEBUG o.s.w.f.GenericFilterBean [restartedMain] Filter 'resourceUrlEncodingFilter' configured for use
-2023-08-15 18:05:22,029 DEBUG o.s.w.f.GenericFilterBean [restartedMain] Filter 'corsFilter' configured for use
-2023-08-15 18:05:22,029 DEBUG o.s.w.f.GenericFilterBean [restartedMain] Filter 'characterEncodingFilter' configured for use
-2023-08-15 18:05:22,030 DEBUG o.s.w.f.GenericFilterBean [restartedMain] Filter 'springSecurityFilterChain' configured for use
-2023-08-15 18:05:22,030 DEBUG o.s.w.f.GenericFilterBean [restartedMain] Filter 'formContentFilter' configured for use
-2023-08-15 18:05:22,955 DEBUG o.s.w.s.h.AbstractHandlerMethodMapping [restartedMain] 18 mappings in 'requestMappingHandlerMapping'
-2023-08-15 18:05:23,248 INFO o.s.s.w.DefaultSecurityFilterChain [restartedMain] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1eb48380, org.springframework.security.web.context.SecurityContextPersistenceFilter@4a56c018, org.springframework.security.web.header.HeaderWriterFilter@56308c98, org.springframework.web.filter.CorsFilter@435d021d, org.springframework.security.web.authentication.logout.LogoutFilter@5b9c21e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@420f741e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@645cc623, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@9c16bc7, org.springframework.security.web.session.SessionManagementFilter@439a5ada, org.springframework.security.web.access.ExceptionTranslationFilter@218d36c3, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@307db122]
-2023-08-15 18:05:23,313 INFO s.d.s.w.PropertySourcedRequestMappingHandlerMapping [restartedMain] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2023-08-15 18:05:23,567 DEBUG o.s.b.d.l.LiveReloadServer [restartedMain] Starting live reload server on port 35729
-2023-08-15 18:05:23,570 INFO o.s.b.d.a.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
-2023-08-15 18:05:23,582 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter [restartedMain] ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2023-08-15 18:05:23,621 INFO o.s.b.a.w.s.WelcomePageHandlerMapping [restartedMain] Adding welcome page: class path resource [public/index.html]
-2023-08-15 18:05:24,742 DEBUG o.s.w.s.h.SimpleUrlHandlerMapping [restartedMain] Patterns [/webjars/**, /**, /swagger-ui*/**] in 'resourceHandlerMapping'
-2023-08-15 18:05:24,761 DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver [restartedMain] ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
-2023-08-15 18:05:25,112 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
-2023-08-15 18:05:25,148 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
-2023-08-15 18:05:25,150 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [restartedMain] Context refreshed
-2023-08-15 18:05:25,183 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [restartedMain] Found 1 custom documentation plugin(s)
-2023-08-15 18:05:25,228 INFO s.d.s.w.s.ApiListingReferenceScanner [restartedMain] Scanning for api listing references
-2023-08-15 18:05:25,512 INFO s.d.s.w.r.o.CachingOperationNameGenerator [restartedMain] Generating unique operation named: openapiJsonUsingGET_1
-2023-08-15 18:05:25,561 DEBUG o.s.b.a.l.ConditionEvaluationReportLoggingListener [restartedMain] 
+2023-08-17 15:33:36,281 INFO o.s.b.StartupInfoLogger [restartedMain] Starting ServletInitializer using Java 17.0.8 on DESKTOP-NVJLB4S with PID 16896 (D:\intellij-workspace\WFM\target\classes started by PC in D:\intellij-workspace\WFM)
+2023-08-17 15:33:36,297 INFO o.s.b.SpringApplication [restartedMain] The following profiles are active: dev
+2023-08-17 15:33:36,298 DEBUG o.s.b.SpringApplication [restartedMain] Loading source class wfm.ServletInitializer
+2023-08-17 15:33:36,388 INFO o.s.b.l.DeferredLog [restartedMain] The Class-Path manifest attribute in C:\Users\PC\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.1.0.0\ojdbc8-21.1.0.0.jar referenced one or more files that do not exist: file:/C:/Users/PC/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.1.0.0/oraclepki.jar
+2023-08-17 15:33:36,389 DEBUG o.s.b.l.DeferredLog [restartedMain] Matching URLs for reloading : [file:/D:/intellij-workspace/WFM/target/classes/]
+2023-08-17 15:33:36,389 DEBUG o.s.b.l.DeferredLog [restartedMain] Included patterns for restart : []
+2023-08-17 15:33:36,390 DEBUG o.s.b.l.DeferredLog [restartedMain] Excluded patterns for restart : [/spring-boot-starter-[\w-]+/, /spring-boot/(bin|build|out)/, /spring-boot-starter/(bin|build|out)/, /spring-boot-devtools/(bin|build|out)/, /spring-boot-actuator/(bin|build|out)/, /spring-boot-autoconfigure/(bin|build|out)/]
+2023-08-17 15:33:36,390 INFO o.s.b.l.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-08-17 15:33:36,391 INFO o.s.b.l.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-08-17 15:33:36,392 DEBUG o.s.c.s.AbstractApplicationContext [restartedMain] Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@58654ee
+2023-08-17 15:33:37,846 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-08-17 15:33:38,001 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 146 ms. Found 12 JPA repository interfaces.
+2023-08-17 15:33:39,106 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [restartedMain] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@4184e758' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-08-17 15:33:39,213 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [restartedMain] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-08-17 15:33:39,781 DEBUG o.s.b.w.s.s.DocumentRoot [restartedMain] Code archive: C:\Users\PC\.m2\repository\org\springframework\boot\spring-boot\2.5.3\spring-boot-2.5.3.jar
+2023-08-17 15:33:39,781 DEBUG o.s.b.w.s.s.DocumentRoot [restartedMain] Code archive: C:\Users\PC\.m2\repository\org\springframework\boot\spring-boot\2.5.3\spring-boot-2.5.3.jar
+2023-08-17 15:33:39,782 DEBUG o.s.b.w.s.s.DocumentRoot [restartedMain] Document root: D:\intellij-workspace\WFM\src\main\webapp
+2023-08-17 15:33:39,862 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2023-08-17 15:33:39,877 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2023-08-17 15:33:39,877 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2023-08-17 15:33:39,878 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.50]
+2023-08-17 15:33:40,041 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2023-08-17 15:33:40,041 DEBUG o.s.b.w.s.c.ServletWebServerApplicationContext [restartedMain] Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2023-08-17 15:33:40,042 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 3650 ms
+2023-08-17 15:33:40,427 INFO o.h.j.i.u.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-08-17 15:33:40,507 INFO o.h.Version [restartedMain] HHH000412: Hibernate ORM core version 5.4.32.Final
+2023-08-17 15:33:40,728 INFO o.h.a.c.r.j.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-08-17 15:33:41,054 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2023-08-17 15:33:42,201 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2023-08-17 15:33:42,230 INFO o.h.d.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2023-08-17 15:33:47,260 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-08-17 15:33:47,273 INFO o.s.o.j.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-08-17 15:33:47,967 DEBUG o.s.c.e.PropertySourcesPropertyResolver [restartedMain] Found key 'numOfReq' in PropertySource 'Config resource 'class path resource [application-dev.properties]' via location 'optional:classpath:/'' with value of type String
+2023-08-17 15:33:47,968 DEBUG o.s.c.e.PropertySourcesPropertyResolver [restartedMain] Found key 'timeForReq' in PropertySource 'Config resource 'class path resource [application-dev.properties]' via location 'optional:classpath:/'' with value of type String
+2023-08-17 15:33:48,161 INFO o.s.s.w.a.p.j.WebXmlMappableAttributesRetriever [restartedMain] Retrieved role-name 'ROLE_USER' from web.xml
+2023-08-17 15:33:48,228 DEBUG o.s.b.w.s.ServletContextInitializerBeans [restartedMain] Mapping filters: springSecurityFilterChain urls=[/*] order=-100, filterRegistrationBean urls=[/*] order=2147483647, characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105, corsFilter urls=[/*] order=2147483647
+2023-08-17 15:33:48,229 DEBUG o.s.b.w.s.ServletContextInitializerBeans [restartedMain] Mapping servlets: dispatcherServlet urls=[/]
+2023-08-17 15:33:48,262 DEBUG o.s.w.f.GenericFilterBean [restartedMain] Filter 'requestContextFilter' configured for use
+2023-08-17 15:33:48,262 DEBUG o.s.w.f.GenericFilterBean [restartedMain] Filter 'resourceUrlEncodingFilter' configured for use
+2023-08-17 15:33:48,264 DEBUG o.s.w.f.GenericFilterBean [restartedMain] Filter 'corsFilter' configured for use
+2023-08-17 15:33:48,264 DEBUG o.s.w.f.GenericFilterBean [restartedMain] Filter 'characterEncodingFilter' configured for use
+2023-08-17 15:33:48,265 DEBUG o.s.w.f.GenericFilterBean [restartedMain] Filter 'springSecurityFilterChain' configured for use
+2023-08-17 15:33:48,265 DEBUG o.s.w.f.GenericFilterBean [restartedMain] Filter 'formContentFilter' configured for use
+2023-08-17 15:33:49,366 DEBUG o.s.w.s.h.AbstractHandlerMethodMapping [restartedMain] 27 mappings in 'requestMappingHandlerMapping'
+2023-08-17 15:33:49,634 INFO o.s.s.w.DefaultSecurityFilterChain [restartedMain] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@78609be3, org.springframework.security.web.context.SecurityContextPersistenceFilter@5d08d099, org.springframework.security.web.header.HeaderWriterFilter@3bfc20e3, org.springframework.web.filter.CorsFilter@29146588, org.springframework.security.web.authentication.logout.LogoutFilter@1cae2267, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@48881c2b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2e385d4e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1978ddfb, org.springframework.security.web.session.SessionManagementFilter@368460a1, org.springframework.security.web.access.ExceptionTranslationFilter@65339d0f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6695605]
+2023-08-17 15:33:49,677 INFO s.d.s.w.PropertySourcedRequestMappingHandlerMapping [restartedMain] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-08-17 15:33:49,933 DEBUG o.s.b.d.l.LiveReloadServer [restartedMain] Starting live reload server on port 35729
+2023-08-17 15:33:49,936 INFO o.s.b.d.a.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2023-08-17 15:33:49,948 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter [restartedMain] ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2023-08-17 15:33:49,982 INFO o.s.b.a.w.s.WelcomePageHandlerMapping [restartedMain] Adding welcome page: class path resource [public/index.html]
+2023-08-17 15:33:51,156 DEBUG o.s.w.s.h.SimpleUrlHandlerMapping [restartedMain] Patterns [/webjars/**, /**, /swagger-ui*/**] in 'resourceHandlerMapping'
+2023-08-17 15:33:51,176 DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver [restartedMain] ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2023-08-17 15:33:51,549 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2023-08-17 15:33:51,575 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2023-08-17 15:33:51,577 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [restartedMain] Context refreshed
+2023-08-17 15:33:51,607 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [restartedMain] Found 1 custom documentation plugin(s)
+2023-08-17 15:33:51,645 INFO s.d.s.w.s.ApiListingReferenceScanner [restartedMain] Scanning for api listing references
+2023-08-17 15:33:51,941 INFO s.d.s.w.r.o.CachingOperationNameGenerator [restartedMain] Generating unique operation named: openapiJsonUsingGET_1
+2023-08-17 15:33:52,034 DEBUG o.s.b.a.l.ConditionEvaluationReportLoggingListener [restartedMain] 
 
 
 ============================
@@ -865,7 +865,7 @@ Negative matches:
 
    JpaRepositoriesAutoConfiguration:
       Did not match:
-         - @ConditionalOnMissingBean (types: org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean,org.springframework.data.jpa.repository.config.JpaRepositoryConfigExtension; SearchStrategy: all) found beans of type 'org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean' &WFM_PUBLIC_VAC_Repo, &SC_USER_MODULE_REPO, &sysConfigDAO, &empRoleRepo, &WFM_PUBLIC_VAC_TYPE_Repo, &userPermissionRepo, &userRepo and found beans of type 'org.springframework.data.jpa.repository.config.JpaRepositoryConfigExtension' org.springframework.data.jpa.repository.config.JpaRepositoryConfigExtension#0 (OnBeanCondition)
+         - @ConditionalOnMissingBean (types: org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean,org.springframework.data.jpa.repository.config.JpaRepositoryConfigExtension; SearchStrategy: all) found beans of type 'org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean' &TGH_CITY_Repo, &userRepo, &WFM_EMP_Repo, &WFM_PUBLIC_VAC_TYPE_Repo, &empRoleRepo, &WFM_SKILL_LEVEL_Repo, &WFM_LABOR_TYPE_Repo, &WFM_PUBLIC_VAC_Repo, &sysConfigDAO, &TGH_POST_OFFICE_Repo, &SC_USER_MODULE_REPO, &userPermissionRepo and found beans of type 'org.springframework.data.jpa.repository.config.JpaRepositoryConfigExtension' org.springframework.data.jpa.repository.config.JpaRepositoryConfigExtension#0 (OnBeanCondition)
       Matched:
          - @ConditionalOnClass found required class 'org.springframework.data.jpa.repository.JpaRepository' (OnClassCondition)
          - @ConditionalOnProperty (spring.data.jpa.repositories.enabled=true) matched (OnPropertyCondition)
@@ -1301,35 +1301,121 @@ Unconditional classes:
 
 
 
-2023-08-15 18:05:25,588 INFO o.s.b.StartupInfoLogger [restartedMain] Started ServletInitializer in 17.673 seconds (JVM running for 19.462)
-2023-08-15 18:05:25,590 DEBUG o.s.b.a.ApplicationAvailabilityBean [restartedMain] Application availability state LivenessState changed to CORRECT
-2023-08-15 18:05:25,594 DEBUG o.s.b.l.DeferredLog [restartedMain] Creating new Restarter for thread Thread[main,5,main]
-2023-08-15 18:05:25,594 DEBUG o.s.b.l.DeferredLog [restartedMain] Immediately restarting application
-2023-08-15 18:05:25,594 DEBUG o.s.b.l.DeferredLog [restartedMain] Created RestartClassLoader org.springframework.boot.devtools.restart.classloader.RestartClassLoader@1a1569a
-2023-08-15 18:05:25,594 DEBUG o.s.b.l.DeferredLog [restartedMain] Starting application wfm.ServletInitializer with URLs [file:/D:/intellij-workspace/WFM/target/classes/]
-2023-08-15 18:05:25,596 DEBUG o.s.b.a.ApplicationAvailabilityBean [restartedMain] Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
-2023-08-15 18:05:29,511 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-08-15 18:05:29,511 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-2] Initializing Servlet 'dispatcherServlet'
-2023-08-15 18:05:29,511 DEBUG o.s.w.s.DispatcherServlet [http-nio-8080-exec-2] Detected StandardServletMultipartResolver
-2023-08-15 18:05:29,511 DEBUG o.s.w.s.DispatcherServlet [http-nio-8080-exec-2] Detected AcceptHeaderLocaleResolver
-2023-08-15 18:05:29,512 DEBUG o.s.w.s.DispatcherServlet [http-nio-8080-exec-2] Detected FixedThemeResolver
-2023-08-15 18:05:29,513 DEBUG o.s.w.s.DispatcherServlet [http-nio-8080-exec-2] Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@32ede341
-2023-08-15 18:05:29,513 DEBUG o.s.w.s.DispatcherServlet [http-nio-8080-exec-2] Detected org.springframework.web.servlet.support.SessionFlashMapManager@3cc8d0bc
-2023-08-15 18:05:29,514 DEBUG o.s.w.s.FrameworkServlet [http-nio-8080-exec-2] enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-2023-08-15 18:05:29,514 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-2] Completed initialization in 3 ms
-2023-08-15 18:05:29,536 DEBUG o.s.c.l.LogFormatUtils [http-nio-8080-exec-2] POST "/WFM_PUBLIC_VAC/insertWFMVac", parameters={}
-2023-08-15 18:05:29,540 DEBUG o.s.w.s.h.AbstractHandlerMapping [http-nio-8080-exec-2] Mapped to wfm.globalControllers.implementation.WFM_PUBLIC_VAC_Controller_Impl#insertWFMVac(WFM_PUBLIC_VAC_Req)
-2023-08-15 18:05:29,603 DEBUG o.s.c.l.LogFormatUtils [http-nio-8080-exec-2] Read "application/json;charset=UTF-8" to [WFM_PUBLIC_VAC_Req(vacationId=9, vacationName=null, startDate=null, numDays=0, vacationTypeId=null)]
-2023-08-15 18:05:29,743 DEBUG o.h.e.j.s.SqlStatementLogger [http-nio-8080-exec-2] select wfm_public0_.vacation_id as vacation_id1_7_0_, wfm_public0_.num_days as num_days2_7_0_, wfm_public0_.start_date as start_date3_7_0_, wfm_public0_.vacation_name as vacation_name4_7_0_, wfm_public0_.vacation_type_id as vacation_type_id5_7_0_, wfm_public1_.vacation_type_id as vacation_type_id1_8_1_, wfm_public1_.vacation_name as vacation_name2_8_1_ from wfm_public_vac wfm_public0_ left outer join wfm_public_vac_type wfm_public1_ on wfm_public0_.vacation_type_id=wfm_public1_.vacation_type_id where wfm_public0_.vacation_id=?
-2023-08-15 18:05:29,819 TRACE o.h.t.d.s.BasicBinder [http-nio-8080-exec-2] binding parameter [1] as [VARCHAR] - [9]
-2023-08-15 18:05:29,949 DEBUG o.h.e.j.s.SqlStatementLogger [http-nio-8080-exec-2] select wfm_public0_.vacation_id as vacation_id1_7_0_, wfm_public0_.num_days as num_days2_7_0_, wfm_public0_.start_date as start_date3_7_0_, wfm_public0_.vacation_name as vacation_name4_7_0_, wfm_public0_.vacation_type_id as vacation_type_id5_7_0_ from wfm_public_vac wfm_public0_ where wfm_public0_.vacation_id=?
-2023-08-15 18:05:29,950 TRACE o.h.t.d.s.BasicBinder [http-nio-8080-exec-2] binding parameter [1] as [VARCHAR] - [9]
-2023-08-15 18:05:30,049 DEBUG o.h.e.j.s.SqlStatementLogger [http-nio-8080-exec-2] insert into wfm_public_vac (num_days, start_date, vacation_name, vacation_type_id, vacation_id) values (?, ?, ?, ?, ?)
-2023-08-15 18:05:30,050 TRACE o.h.t.d.s.BasicBinder [http-nio-8080-exec-2] binding parameter [1] as [BIGINT] - [0]
-2023-08-15 18:05:30,051 TRACE o.h.t.d.s.BasicBinder [http-nio-8080-exec-2] binding parameter [2] as [TIMESTAMP] - [null]
-2023-08-15 18:05:30,052 TRACE o.h.t.d.s.BasicBinder [http-nio-8080-exec-2] binding parameter [3] as [VARCHAR] - [null]
-2023-08-15 18:05:30,052 TRACE o.h.t.d.s.BasicBinder [http-nio-8080-exec-2] binding parameter [4] as [VARCHAR] - [null]
-2023-08-15 18:05:30,052 TRACE o.h.t.d.s.BasicBinder [http-nio-8080-exec-2] binding parameter [5] as [VARCHAR] - [9]
-2023-08-15 18:05:30,233 DEBUG o.s.w.s.m.m.a.AbstractMessageConverterMethodProcessor [http-nio-8080-exec-2] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2023-08-15 18:05:30,234 DEBUG o.s.c.l.LogFormatUtils [http-nio-8080-exec-2] Writing [APIResponse(timestamp=null, statusCode=200, status=200 OK, reason=null, clientMessage=null, develope (truncated)...]
-2023-08-15 18:05:30,251 DEBUG o.s.w.s.FrameworkServlet [http-nio-8080-exec-2] Completed 200 OK
+2023-08-17 15:33:52,055 INFO o.s.b.StartupInfoLogger [restartedMain] Started ServletInitializer in 16.33 seconds (JVM running for 17.946)
+2023-08-17 15:33:52,058 DEBUG o.s.b.a.ApplicationAvailabilityBean [restartedMain] Application availability state LivenessState changed to CORRECT
+2023-08-17 15:33:52,061 DEBUG o.s.b.l.DeferredLog [restartedMain] Creating new Restarter for thread Thread[main,5,main]
+2023-08-17 15:33:52,061 DEBUG o.s.b.l.DeferredLog [restartedMain] Immediately restarting application
+2023-08-17 15:33:52,061 DEBUG o.s.b.l.DeferredLog [restartedMain] Created RestartClassLoader org.springframework.boot.devtools.restart.classloader.RestartClassLoader@1a1569a
+2023-08-17 15:33:52,062 DEBUG o.s.b.l.DeferredLog [restartedMain] Starting application wfm.ServletInitializer with URLs [file:/D:/intellij-workspace/WFM/target/classes/]
+2023-08-17 15:33:52,063 DEBUG o.s.b.a.ApplicationAvailabilityBean [restartedMain] Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2023-08-17 15:34:53,076 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-17 15:34:53,076 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2023-08-17 15:34:53,077 DEBUG o.s.w.s.DispatcherServlet [http-nio-8080-exec-1] Detected StandardServletMultipartResolver
+2023-08-17 15:34:53,078 DEBUG o.s.w.s.DispatcherServlet [http-nio-8080-exec-1] Detected AcceptHeaderLocaleResolver
+2023-08-17 15:34:53,079 DEBUG o.s.w.s.DispatcherServlet [http-nio-8080-exec-1] Detected FixedThemeResolver
+2023-08-17 15:34:53,081 DEBUG o.s.w.s.DispatcherServlet [http-nio-8080-exec-1] Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@78de9239
+2023-08-17 15:34:53,081 DEBUG o.s.w.s.DispatcherServlet [http-nio-8080-exec-1] Detected org.springframework.web.servlet.support.SessionFlashMapManager@5ed6b5e0
+2023-08-17 15:34:53,081 DEBUG o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2023-08-17 15:34:53,081 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 4 ms
+2023-08-17 15:34:53,142 DEBUG o.s.c.l.LogFormatUtils [http-nio-8080-exec-1] DELETE "/WFM_EMP/deleteEmployee?empId=1234", parameters={masked}
+2023-08-17 15:34:53,151 DEBUG o.s.w.s.h.AbstractHandlerMapping [http-nio-8080-exec-1] Mapped to wfm.globalControllers.implementation.WFM_EMP_Controller_Impl#deleteEmployee(long)
+2023-08-17 15:34:53,333 DEBUG o.h.e.j.s.SqlStatementLogger [http-nio-8080-exec-1] select wfm_emp0_.emp_id as emp_id1_9_0_, wfm_emp0_.address as address2_9_0_, wfm_emp0_.birthdate as birthdate3_9_0_, wfm_emp0_.soc_sec_nbr as soc_sec_nbr4_9_0_, wfm_emp0_.city as city5_9_0_, wfm_emp0_.civil as civil6_9_0_, wfm_emp0_.degree as degree7_9_0_, wfm_emp0_.first_name as first_name8_9_0_, wfm_emp0_.gender as gender9_9_0_, wfm_emp0_.hire_date as hire_date10_9_0_, wfm_emp0_.job_id as job_id11_9_0_, wfm_emp0_.job_title_id as job_title_id12_9_0_, wfm_emp0_.labor_type_id as labor_type_id18_9_0_, wfm_emp0_.last_name as last_name13_9_0_, wfm_emp0_.location as location14_9_0_, wfm_emp0_.phone as phone15_9_0_, wfm_emp0_.office_code as office_code19_9_0_, wfm_emp0_.qualification_id as qualification_id16_9_0_, wfm_emp0_.qualification_date as qualification_dat17_9_0_, wfm_emp0_.level_id as level_id20_9_0_, wfm_labor_1_.labor_type_id as labor_type_id1_10_1_, wfm_labor_1_.labor_type_name as labor_type_name2_10_1_, tgh_post_o2_.office_code as office_code1_8_2_, tgh_post_o2_.office_name as office_name2_8_2_, tgh_post_o2_.city_code as city_code3_8_2_, tgh_city3_.city_code as city_code1_7_3_, tgh_city3_.city_name as city_name2_7_3_, wfm_skill_4_.level_id as level_id1_13_4_, wfm_skill_4_.level_name as level_name2_13_4_ from wfm_emp wfm_emp0_ left outer join wfm_labor_type wfm_labor_1_ on wfm_emp0_.labor_type_id=wfm_labor_1_.labor_type_id left outer join tgh_post_office tgh_post_o2_ on wfm_emp0_.office_code=tgh_post_o2_.office_code left outer join tgh_city tgh_city3_ on tgh_post_o2_.city_code=tgh_city3_.city_code left outer join wfm_skill_level wfm_skill_4_ on wfm_emp0_.level_id=wfm_skill_4_.level_id where wfm_emp0_.emp_id=?
+2023-08-17 15:34:53,409 TRACE o.h.t.d.s.BasicBinder [http-nio-8080-exec-1] binding parameter [1] as [BIGINT] - [1234]
+2023-08-17 15:34:53,524 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-1] extracted value ([labor_type_id1_10_1_] : [VARCHAR]) - [1]
+2023-08-17 15:34:53,524 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-1] extracted value ([office_code1_8_2_] : [VARCHAR]) - [null]
+2023-08-17 15:34:53,524 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-1] extracted value ([city_code1_7_3_] : [VARCHAR]) - [null]
+2023-08-17 15:34:53,524 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-1] extracted value ([level_id1_13_4_] : [VARCHAR]) - [1]
+2023-08-17 15:34:53,551 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-1] extracted value ([address2_9_0_] : [VARCHAR]) - [null]
+2023-08-17 15:34:53,555 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-1] extracted value ([birthdate3_9_0_] : [TIMESTAMP]) - [null]
+2023-08-17 15:34:53,555 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-1] extracted value ([soc_sec_nbr4_9_0_] : [VARCHAR]) - [null]
+2023-08-17 15:34:53,556 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-1] extracted value ([city5_9_0_] : [VARCHAR]) - [null]
+2023-08-17 15:34:53,557 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-1] extracted value ([civil6_9_0_] : [INTEGER]) - [null]
+2023-08-17 15:34:53,557 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-1] extracted value ([degree7_9_0_] : [INTEGER]) - [null]
+2023-08-17 15:34:53,557 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-1] extracted value ([first_name8_9_0_] : [VARCHAR]) - [1234]
+2023-08-17 15:34:53,557 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-1] extracted value ([gender9_9_0_] : [VARCHAR]) - [null]
+2023-08-17 15:34:53,557 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-1] extracted value ([hire_date10_9_0_] : [TIMESTAMP]) - [null]
+2023-08-17 15:34:53,557 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-1] extracted value ([job_id11_9_0_] : [INTEGER]) - [null]
+2023-08-17 15:34:53,557 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-1] extracted value ([job_title_id12_9_0_] : [INTEGER]) - [null]
+2023-08-17 15:34:53,557 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-1] extracted value ([labor_type_id18_9_0_] : [VARCHAR]) - [1]
+2023-08-17 15:34:53,557 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-1] extracted value ([last_name13_9_0_] : [VARCHAR]) - [null]
+2023-08-17 15:34:53,557 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-1] extracted value ([location14_9_0_] : [VARCHAR]) - [null]
+2023-08-17 15:34:53,565 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-1] extracted value ([phone15_9_0_] : [BIGINT]) - [0]
+2023-08-17 15:34:53,565 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-1] extracted value ([office_code19_9_0_] : [VARCHAR]) - [null]
+2023-08-17 15:34:53,565 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-1] extracted value ([qualification_id16_9_0_] : [INTEGER]) - [null]
+2023-08-17 15:34:53,572 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-1] extracted value ([qualification_dat17_9_0_] : [TIMESTAMP]) - [2023-01-22 02:06:00.0]
+2023-08-17 15:34:53,572 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-1] extracted value ([level_id20_9_0_] : [VARCHAR]) - [1]
+2023-08-17 15:34:53,576 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-1] extracted value ([labor_type_name2_10_1_] : [VARCHAR]) - [ دائم]
+2023-08-17 15:34:53,587 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-1] extracted value ([level_name2_13_4_] : [VARCHAR]) - [ممتاز]
+2023-08-17 15:34:53,748 DEBUG o.h.e.j.s.SqlStatementLogger [http-nio-8080-exec-1] delete from wfm_emp where emp_id=?
+2023-08-17 15:34:53,748 TRACE o.h.t.d.s.BasicBinder [http-nio-8080-exec-1] binding parameter [1] as [BIGINT] - [1234]
+2023-08-17 15:34:53,988 DEBUG o.s.w.s.m.m.a.AbstractMessageConverterMethodProcessor [http-nio-8080-exec-1] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-08-17 15:34:53,989 DEBUG o.s.c.l.LogFormatUtils [http-nio-8080-exec-1] Writing [APIResponse(timestamp=null, statusCode=200, status=200 OK, reason=null, clientMessage=null, develope (truncated)...]
+2023-08-17 15:34:54,024 DEBUG o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Completed 200 OK
+2023-08-17 15:36:02,308 DEBUG o.s.c.l.LogFormatUtils [http-nio-8080-exec-5] DELETE "/WFM_EMP/deleteEmployee?empId=19059", parameters={masked}
+2023-08-17 15:36:02,309 DEBUG o.s.w.s.h.AbstractHandlerMapping [http-nio-8080-exec-5] Mapped to wfm.globalControllers.implementation.WFM_EMP_Controller_Impl#deleteEmployee(long)
+2023-08-17 15:36:02,374 DEBUG o.h.e.j.s.SqlStatementLogger [http-nio-8080-exec-5] select wfm_emp0_.emp_id as emp_id1_9_0_, wfm_emp0_.address as address2_9_0_, wfm_emp0_.birthdate as birthdate3_9_0_, wfm_emp0_.soc_sec_nbr as soc_sec_nbr4_9_0_, wfm_emp0_.city as city5_9_0_, wfm_emp0_.civil as civil6_9_0_, wfm_emp0_.degree as degree7_9_0_, wfm_emp0_.first_name as first_name8_9_0_, wfm_emp0_.gender as gender9_9_0_, wfm_emp0_.hire_date as hire_date10_9_0_, wfm_emp0_.job_id as job_id11_9_0_, wfm_emp0_.job_title_id as job_title_id12_9_0_, wfm_emp0_.labor_type_id as labor_type_id18_9_0_, wfm_emp0_.last_name as last_name13_9_0_, wfm_emp0_.location as location14_9_0_, wfm_emp0_.phone as phone15_9_0_, wfm_emp0_.office_code as office_code19_9_0_, wfm_emp0_.qualification_id as qualification_id16_9_0_, wfm_emp0_.qualification_date as qualification_dat17_9_0_, wfm_emp0_.level_id as level_id20_9_0_, wfm_labor_1_.labor_type_id as labor_type_id1_10_1_, wfm_labor_1_.labor_type_name as labor_type_name2_10_1_, tgh_post_o2_.office_code as office_code1_8_2_, tgh_post_o2_.office_name as office_name2_8_2_, tgh_post_o2_.city_code as city_code3_8_2_, tgh_city3_.city_code as city_code1_7_3_, tgh_city3_.city_name as city_name2_7_3_, wfm_skill_4_.level_id as level_id1_13_4_, wfm_skill_4_.level_name as level_name2_13_4_ from wfm_emp wfm_emp0_ left outer join wfm_labor_type wfm_labor_1_ on wfm_emp0_.labor_type_id=wfm_labor_1_.labor_type_id left outer join tgh_post_office tgh_post_o2_ on wfm_emp0_.office_code=tgh_post_o2_.office_code left outer join tgh_city tgh_city3_ on tgh_post_o2_.city_code=tgh_city3_.city_code left outer join wfm_skill_level wfm_skill_4_ on wfm_emp0_.level_id=wfm_skill_4_.level_id where wfm_emp0_.emp_id=?
+2023-08-17 15:36:02,375 TRACE o.h.t.d.s.BasicBinder [http-nio-8080-exec-5] binding parameter [1] as [BIGINT] - [19059]
+2023-08-17 15:36:02,449 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([labor_type_id1_10_1_] : [VARCHAR]) - [1]
+2023-08-17 15:36:02,449 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([office_code1_8_2_] : [VARCHAR]) - [AEC]
+2023-08-17 15:36:02,449 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([city_code1_7_3_] : [VARCHAR]) - [CAI]
+2023-08-17 15:36:02,450 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([level_id1_13_4_] : [VARCHAR]) - [2]
+2023-08-17 15:36:02,450 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([address2_9_0_] : [VARCHAR]) - [مساكن نوبار بلوك 84 شقة 14 شبرا الخيمة]
+2023-08-17 15:36:02,451 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([birthdate3_9_0_] : [TIMESTAMP]) - [null]
+2023-08-17 15:36:02,451 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([soc_sec_nbr4_9_0_] : [VARCHAR]) - [null]
+2023-08-17 15:36:02,452 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([city5_9_0_] : [VARCHAR]) - [null]
+2023-08-17 15:36:02,452 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([civil6_9_0_] : [INTEGER]) - [null]
+2023-08-17 15:36:02,452 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([degree7_9_0_] : [INTEGER]) - [null]
+2023-08-17 15:36:02,452 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([first_name8_9_0_] : [VARCHAR]) - [عادل ]
+2023-08-17 15:36:02,453 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([gender9_9_0_] : [VARCHAR]) - [null]
+2023-08-17 15:36:02,453 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([hire_date10_9_0_] : [TIMESTAMP]) - [null]
+2023-08-17 15:36:02,454 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([job_id11_9_0_] : [INTEGER]) - [null]
+2023-08-17 15:36:02,454 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([job_title_id12_9_0_] : [INTEGER]) - [null]
+2023-08-17 15:36:02,454 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([labor_type_id18_9_0_] : [VARCHAR]) - [1]
+2023-08-17 15:36:02,454 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([last_name13_9_0_] : [VARCHAR]) - [محمد]
+2023-08-17 15:36:02,455 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([location14_9_0_] : [VARCHAR]) - [null]
+2023-08-17 15:36:02,455 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([phone15_9_0_] : [BIGINT]) - [1069221288]
+2023-08-17 15:36:02,455 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([office_code19_9_0_] : [VARCHAR]) - [AEC]
+2023-08-17 15:36:02,455 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([qualification_id16_9_0_] : [INTEGER]) - [null]
+2023-08-17 15:36:02,455 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([qualification_dat17_9_0_] : [TIMESTAMP]) - [null]
+2023-08-17 15:36:02,455 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([level_id20_9_0_] : [VARCHAR]) - [2]
+2023-08-17 15:36:02,456 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([labor_type_name2_10_1_] : [VARCHAR]) - [ دائم]
+2023-08-17 15:36:02,457 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([office_name2_8_2_] : [VARCHAR]) - [العباسيه مصر]
+2023-08-17 15:36:02,457 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([city_code3_8_2_] : [VARCHAR]) - [CAI]
+2023-08-17 15:36:02,457 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([city_name2_7_3_] : [VARCHAR]) - [القاهره الكبري]
+2023-08-17 15:36:02,458 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([level_name2_13_4_] : [VARCHAR]) - [جيد جد]
+2023-08-17 15:36:02,462 DEBUG o.h.e.j.s.SqlStatementLogger [http-nio-8080-exec-5] select emps0_.office_code as office_code19_9_0_, emps0_.emp_id as emp_id1_9_0_, emps0_.emp_id as emp_id1_9_1_, emps0_.address as address2_9_1_, emps0_.birthdate as birthdate3_9_1_, emps0_.soc_sec_nbr as soc_sec_nbr4_9_1_, emps0_.city as city5_9_1_, emps0_.civil as civil6_9_1_, emps0_.degree as degree7_9_1_, emps0_.first_name as first_name8_9_1_, emps0_.gender as gender9_9_1_, emps0_.hire_date as hire_date10_9_1_, emps0_.job_id as job_id11_9_1_, emps0_.job_title_id as job_title_id12_9_1_, emps0_.labor_type_id as labor_type_id18_9_1_, emps0_.last_name as last_name13_9_1_, emps0_.location as location14_9_1_, emps0_.phone as phone15_9_1_, emps0_.office_code as office_code19_9_1_, emps0_.qualification_id as qualification_id16_9_1_, emps0_.qualification_date as qualification_dat17_9_1_, emps0_.level_id as level_id20_9_1_, wfm_labor_1_.labor_type_id as labor_type_id1_10_2_, wfm_labor_1_.labor_type_name as labor_type_name2_10_2_, wfm_skill_2_.level_id as level_id1_13_3_, wfm_skill_2_.level_name as level_name2_13_3_ from wfm_emp emps0_ left outer join wfm_labor_type wfm_labor_1_ on emps0_.labor_type_id=wfm_labor_1_.labor_type_id left outer join wfm_skill_level wfm_skill_2_ on emps0_.level_id=wfm_skill_2_.level_id where emps0_.office_code=?
+2023-08-17 15:36:02,464 TRACE o.h.t.d.s.BasicBinder [http-nio-8080-exec-5] binding parameter [1] as [VARCHAR] - [AEC]
+2023-08-17 15:36:02,571 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([emp_id1_9_1_] : [BIGINT]) - [19041]
+2023-08-17 15:36:02,571 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([labor_type_id1_10_2_] : [VARCHAR]) - [1]
+2023-08-17 15:36:02,571 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([level_id1_13_3_] : [VARCHAR]) - [2]
+2023-08-17 15:36:02,578 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([address2_9_1_] : [VARCHAR]) - [مدينة النهضة بلوك 16 مدخل 1 شقة 15]
+2023-08-17 15:36:02,578 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([birthdate3_9_1_] : [TIMESTAMP]) - [null]
+2023-08-17 15:36:02,579 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([soc_sec_nbr4_9_1_] : [VARCHAR]) - [null]
+2023-08-17 15:36:02,579 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([city5_9_1_] : [VARCHAR]) - [null]
+2023-08-17 15:36:02,579 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([civil6_9_1_] : [INTEGER]) - [null]
+2023-08-17 15:36:02,580 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([degree7_9_1_] : [INTEGER]) - [null]
+2023-08-17 15:36:02,580 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([first_name8_9_1_] : [VARCHAR]) - [صابر ]
+2023-08-17 15:36:02,580 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([gender9_9_1_] : [VARCHAR]) - [null]
+2023-08-17 15:36:02,581 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([hire_date10_9_1_] : [TIMESTAMP]) - [null]
+2023-08-17 15:36:02,581 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([job_id11_9_1_] : [INTEGER]) - [null]
+2023-08-17 15:36:02,581 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([job_title_id12_9_1_] : [INTEGER]) - [null]
+2023-08-17 15:36:02,581 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([labor_type_id18_9_1_] : [VARCHAR]) - [1]
+2023-08-17 15:36:02,582 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([last_name13_9_1_] : [VARCHAR]) - [فراج]
+2023-08-17 15:36:02,582 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([location14_9_1_] : [VARCHAR]) - [null]
+2023-08-17 15:36:02,582 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([phone15_9_1_] : [BIGINT]) - [26567712]
+2023-08-17 15:36:02,582 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([office_code19_9_1_] : [VARCHAR]) - [AEC]
+2023-08-17 15:36:02,582 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([qualification_id16_9_1_] : [INTEGER]) - [null]
+2023-08-17 15:36:02,582 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([qualification_dat17_9_1_] : [TIMESTAMP]) - [null]
+2023-08-17 15:36:02,582 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([level_id20_9_1_] : [VARCHAR]) - [2]
+2023-08-17 15:36:02,582 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([office_code19_9_0_] : [VARCHAR]) - [AEC]
+2023-08-17 15:36:02,582 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([emp_id1_9_0_] : [BIGINT]) - [19041]
+2023-08-17 15:36:02,582 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([emp_id1_9_1_] : [BIGINT]) - [19059]
+2023-08-17 15:36:02,582 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([labor_type_id1_10_2_] : [VARCHAR]) - [1]
+2023-08-17 15:36:02,582 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([level_id1_13_3_] : [VARCHAR]) - [2]
+2023-08-17 15:36:02,582 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([office_code19_9_0_] : [VARCHAR]) - [AEC]
+2023-08-17 15:36:02,582 TRACE o.h.t.d.s.BasicExtractor [http-nio-8080-exec-5] extracted value ([emp_id1_9_0_] : [BIGINT]) - [19059]
+2023-08-17 15:36:02,642 DEBUG o.h.e.j.s.SqlStatementLogger [http-nio-8080-exec-5] delete from wfm_emp where emp_id=?
+2023-08-17 15:36:02,643 TRACE o.h.t.d.s.BasicBinder [http-nio-8080-exec-5] binding parameter [1] as [BIGINT] - [19059]
+2023-08-17 15:36:02,773 DEBUG o.s.w.s.m.m.a.AbstractMessageConverterMethodProcessor [http-nio-8080-exec-5] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-08-17 15:36:02,774 DEBUG o.s.c.l.LogFormatUtils [http-nio-8080-exec-5] Writing [APIResponse(timestamp=null, statusCode=200, status=200 OK, reason=null, clientMessage=null, develope (truncated)...]
+2023-08-17 15:36:02,779 DEBUG o.s.w.s.FrameworkServlet [http-nio-8080-exec-5] Completed 200 OK
