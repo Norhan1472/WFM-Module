@@ -10,6 +10,8 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 
 @Entity
@@ -70,4 +72,7 @@ public class WFM_EMP {
     private String location;
     @Column(name = "SOC_SEC_NBR")
     private String cardId;
+    @OneToMany(mappedBy = "wfm_emp")//fetch = FetchType.EAGER,
+    @JsonIgnore
+    private Set<WFM_CALENDER_SHIFT> wfm_calender_shifts = new HashSet<>();
 }
