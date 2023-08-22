@@ -31,10 +31,9 @@ public class WFM_CALENDER_SHIFT {
     @Column(name = "CALENDAR_DATE")
     private Date calenderDate;// primary
     @Column(name = "SHIFT_TOTAL_WIEGHT")
-    private long shiftTotalWeight;
+    private Long shiftTotalWeight;
     @Column(name = "LAST_TOTAL_WIEGHT")
-    private long lastTotalWeight;
+    private Long lastTotalWeight;
     @Column(name = "TOTAL_HOUR_WIEGHT")
-    private long totalHourWeight;
-
+    private Long totalHourWeight;
 }

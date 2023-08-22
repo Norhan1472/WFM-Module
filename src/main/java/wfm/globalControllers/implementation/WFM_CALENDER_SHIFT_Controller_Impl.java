@@ -32,4 +32,20 @@ public class WFM_CALENDER_SHIFT_Controller_Impl implements WFM_CALENDER_SHIFT_Co
             return new ResponseEntity<APIResponse>(apiResponse, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+    @Override
+    public ResponseEntity<APIResponse> deleteShift(long empId) {
+        APIResponse apiResponse = new APIResponse();
+        try {
+            System.out.println("kkiioo");
+            return shift_service.deleteShift(empId);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            apiResponse.setStatus(HttpStatus.INTERNAL_SERVER_ERROR);
+            apiResponse.setStatusCode(HttpStatus.INTERNAL_SERVER_ERROR.value());
+            apiResponse.setClientMessage(ex.getMessage());
+            apiResponse.setDeveloperMessage(ex.getCause().toString());
+            return new ResponseEntity<APIResponse>(apiResponse, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 }

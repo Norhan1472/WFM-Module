@@ -18,7 +18,12 @@ import wfm.services.WFM_CALENDER_SHIFT_Service;
 import javax.transaction.Transactional;
 import java.sql.PreparedStatement;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -135,7 +140,7 @@ public class WFM_CALENDER_SHIFT_Service_Impl implements WFM_CALENDER_SHIFT_Servi
     }
 
     @Override
-    public ResponseEntity<APIResponse> insertGroupShiftInQuery(WFM_CALENDER_SHIFT_Insert_Req shift_insert_req) {
+    public ResponseEntity<APIResponse> insertGroupShiftInQuery(WFM_CALENDER_SHIFT_Insert_Req shift_insert_req) throws ParseException {
         StringBuilder queryBuilder = new StringBuilder("INSERT ALL ");
         APIResponse apiResponse = new APIResponse();
         List<Object> queryParams = new ArrayList<>();
@@ -168,16 +173,32 @@ public class WFM_CALENDER_SHIFT_Service_Impl implements WFM_CALENDER_SHIFT_Servi
             return new ResponseEntity<APIResponse>(apiResponse, HttpStatus.BAD_REQUEST);
         }
         else{
+            String []dateStart = shift_insert_req.getDateFrom().split("-");
+            String []dateEnd = shift_insert_req.getDateTo().split("-");
+            LocalDate startDate = LocalDate.of(Integer.parseInt(dateStart[2]), Integer.parseInt(dateStart[1]),Integer.parseInt(dateStart[0]));
+            LocalDate endDate = LocalDate.of(Integer.parseInt(dateEnd[2]), Integer.parseInt(dateEnd[1]),Integer.parseInt(dateEnd[0]));
 
-            for (long id : shift_insert_req.getWfm_emps()) {
-                queryBuilder.append("INTO wfm_calendar_shift (shift_start, emp_id, calendar_date, shift_id ) VALUES ( to_date(?, 'DD-MM-YYYY'), ? , to_date(? , 'DD-MM-YYYY'), ?) ");
+            List<String> datesInRange = getDatesBetween(startDate, endDate);
+            System.out.println("testing");
+            System.out.println(datesInRange.size());
+            for (String date : datesInRange) {
+                for (long id : shift_insert_req.getWfm_emps()) {
+                    queryBuilder.append("INTO wfm_calendar_shift (shift_start, emp_id, calendar_date, shift_id ) VALUES ( to_date(?, 'DD-MM-YYYY') + TO_DSINTERVAL('0 ' || ?), ? , to_date(? , 'DD-MM-YYYY'), ?) ");
+                    queryParams.add(date);
+                    queryParams.add(shift_insert_req.getStartHour());
+                    queryParams.add(id);
+                    queryParams.add(shift_insert_req.getDateTo());
+                    queryParams.add(shift_insert_req.getWfm_shifts());
+                }
             }
-            for (long id : shift_insert_req.getWfm_emps()) {
-                queryParams.add(shift_insert_req.getDateFrom());
+            /*for (long id : shift_insert_req.getWfm_emps()) {
+               */
+            /* queryParams.add(shift_insert_req.getDateFrom());
                 queryParams.add(id);
                 queryParams.add(shift_insert_req.getDateTo());
-                queryParams.add(shift_insert_req.getWfm_shifts());
-            }
+                queryParams.add(shift_insert_req.getWfm_shifts());*/
+            /*
+            }*/
             queryBuilder.append(" SELECT 1 FROM dual");
             String query = queryBuilder.toString();
             int updatedRows = jdbcTemplate.update(query, queryParams.toArray());
@@ -191,7 +212,77 @@ public class WFM_CALENDER_SHIFT_Service_Impl implements WFM_CALENDER_SHIFT_Servi
                 apiResponse.setStatusCode(HttpStatus.INTERNAL_SERVER_ERROR.value());
                 apiResponse.setClientMessage("Failed to insert shifts");
             }
+
             return new ResponseEntity<APIResponse>(apiResponse, HttpStatus.OK);
             }
     }
+
+
+    private List<String> getDatesBetween(LocalDate startDate, LocalDate endDate) {
+            List<String> datesInRange = new ArrayList<>();
+            long daysBetween = ChronoUnit.DAYS.between(startDate, endDate);
+
+            for (int i = 0; i <= daysBetween; i++) {
+                LocalDate currentDate = startDate.plusDays(i);
+                datesInRange.add(String.valueOf(currentDate.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"))));
+                System.out.println("currentDate = "+currentDate.format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
+            }
+
+            return datesInRange;
+        }
+    @Override
+    public ResponseEntity<APIResponse> deleteShift(long empId) {
+        APIResponse apiResponse = new APIResponse();
+        List<WFM_CALENDER_SHIFT> wfm_calender_shift = wfm_calender_shift_repo.findByEmpId(empId);
+        if (wfm_calender_shift.isEmpty()){
+            apiResponse.setStatus(HttpStatus.BAD_REQUEST);
+            apiResponse.setStatusCode(HttpStatus.BAD_REQUEST.value());
+            apiResponse.setClientMessage("There is no shifts for this employee");
+            return new ResponseEntity<APIResponse>(apiResponse, HttpStatus.BAD_REQUEST);
+
+        }
+        String sql = "DELETE FROM WFM_CALENDAR_SHIFT WHERE emp_id = ?";
+
+        int updatedRows = jdbcTemplate.update(sql, empId);
+        if (updatedRows > 0) {
+            apiResponse.setStatus(HttpStatus.OK);
+            apiResponse.setStatusCode(HttpStatus.OK.value());
+            apiResponse.setClientMessage("Shifts Deleted Successfully");
+        } else {
+            apiResponse.setStatus(HttpStatus.INTERNAL_SERVER_ERROR);
+            apiResponse.setStatusCode(HttpStatus.INTERNAL_SERVER_ERROR.value());
+            apiResponse.setClientMessage("Failed to delete shifts");
+        }
+
+       /* int num = wfm_calender_shift_repo.deleteShift(empId);
+        System.out.println(num);
+        if(num>0){
+            new ResponseEntity<APIResponse>(apiResponse, HttpStatus.OK);
+        }
+*/
+        return new ResponseEntity<APIResponse>(apiResponse, HttpStatus.OK);
+    }
+
+
+    /*private String putHoursWithDate(String dateString,String hoursString) throws ParseException {
+        // Date in the format "dd-MM-yyyy"
+        SimpleDateFormat dateFormatter = new SimpleDateFormat("dd-MM-yyyy");
+        Date date = dateFormatter.parse(dateString);
+
+        // Convert the Date to LocalDateTime
+        LocalDateTime localDateTime = LocalDateTime.ofInstant(date.toInstant(), java.time.ZoneId.systemDefault());
+
+        // Add hours to LocalDateTime
+        String[] hoursMinutes = hoursString.split(":");
+        int hours = Integer.parseInt(hoursMinutes[0]);
+        int minutes = Integer.parseInt(hoursMinutes[1]);
+        localDateTime = localDateTime.withHour(hours);
+        localDateTime = localDateTime.withMinute(minutes);
+
+        // Format the final LocalDateTime
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+        String formattedDateTime = localDateTime.format(formatter);
+        System.out.println("Final Formatted Date-Time: " + formattedDateTime);
+        return formattedDateTime;
+    }*/
 }
