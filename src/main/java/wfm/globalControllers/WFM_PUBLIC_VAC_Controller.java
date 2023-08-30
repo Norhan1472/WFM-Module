@@ -15,4 +15,6 @@ public interface WFM_PUBLIC_VAC_Controller {
     public ResponseEntity<APIResponse> insertWFMVac(@RequestBody WFM_PUBLIC_VAC_Req wfm_PUBLIC_VAC_Req) ;
     @DeleteMapping("/deleteWFMVac")
     public ResponseEntity<APIResponse>deleteWFMVac(@RequestParam String vacationId);
+    @GetMapping("/getWFMVacById")
+    public ResponseEntity<APIResponse>getWFMVacById(@RequestParam String vacationId);
 }

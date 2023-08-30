@@ -56,14 +56,14 @@ public class WFM_EMP {
     @JoinColumn(name = "LABOR_TYPE_ID")
     private WFM_LABOR_TYPE laborType;
     @Column(name = "DEGREE")
-    private Integer degree;
+    private Long degree;
     @Column(name = "QUALIFICATION_DATE")
     @JsonFormat(pattern = "dd-mm-yyyy")
     private Date qualificationDate;
     @Column(name = "QUALIFICATION_ID")
-    private Integer qualification;
+    private Long qualification;
     @Column(name = "JOB_TITLE_ID")
-    private Integer jobTitle;
+    private Long jobTitle;
     @Column(name = "JOB_ID")
     private Integer job;
     @Column(name = "CIVIL")

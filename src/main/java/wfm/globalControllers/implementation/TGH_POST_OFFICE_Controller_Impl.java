@@ -34,10 +34,11 @@ public class TGH_POST_OFFICE_Controller_Impl implements TGH_POST_OFFICE_Controll
     public ResponseEntity<APIResponse> searchOffices(OFFICES_Search_Req officesSearchReq) {
         APIResponse apiResponse = new APIResponse();
         try {
-            List<TGH_POST_OFFICE>result = tghPostOfficeService.searchOffices(officesSearchReq);
+            //List<TGH_POST_OFFICE>result = tghPostOfficeService.searchOffices(officesSearchReq);
             //MapOffices mapOffices = new MapOffices();
             //List<TGH_POST_OFFICE>result = tghPostOfficeRepo.findAll();
             // List<OFFICES_Search_Response> data = mapOffices.customizedOfficeSearchResponse(result);
+            List<OFFICES_Search_Response>result = tghPostOfficeService.searchOfficesJdbc(officesSearchReq);
             if (result.isEmpty()) {
                 apiResponse.setStatus(HttpStatus.OK);
                 apiResponse.setStatusCode(HttpStatus.OK.value());

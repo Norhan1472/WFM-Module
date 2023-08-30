@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Date;
+
 @Setter
 @Getter
 @AllArgsConstructor
@@ -17,4 +19,10 @@ public class CustomEmployeeData {
     private String gender;
     private long phone;
     private String address;
+    private String birthDate;
+    private String cardId;
+    private String hireDate;
+    private String city;
+    private String levelName;
+    private String laborType;
 }

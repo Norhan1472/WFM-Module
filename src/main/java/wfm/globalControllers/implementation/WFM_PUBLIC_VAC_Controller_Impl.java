@@ -54,7 +54,7 @@ public class WFM_PUBLIC_VAC_Controller_Impl implements WFM_PUBLIC_VAC_Controller
     public ResponseEntity<APIResponse> updateWFMVac(WFM_PUBLIC_VAC_Req wfm_PUBLIC_VAC_Req) {
         APIResponse apiResponse = new APIResponse();
         try {
-            WFM_PUBLIC_VAC result = wfmPublicVacService.updateWFMVac(wfm_PUBLIC_VAC_Req);
+            WFM_PUBLIC_VAC_Search_Response result = wfmPublicVacService.updateWFMVac(wfm_PUBLIC_VAC_Req);
             if (Objects.isNull(result)) {
                 apiResponse.setStatus(HttpStatus.OK);
                 apiResponse.setStatusCode(HttpStatus.OK.value());
@@ -63,6 +63,7 @@ public class WFM_PUBLIC_VAC_Controller_Impl implements WFM_PUBLIC_VAC_Controller
             } else {
                 apiResponse.setStatus(HttpStatus.OK);
                 apiResponse.setStatusCode(HttpStatus.OK.value());
+                apiResponse.setClientMessage("Vacation Updated Successfully");
                 apiResponse.setBody(result);
                 return new ResponseEntity<APIResponse>(apiResponse, HttpStatus.OK);
             }
@@ -89,7 +90,7 @@ public class WFM_PUBLIC_VAC_Controller_Impl implements WFM_PUBLIC_VAC_Controller
                 apiResponse.setClientMessage("Please Enter vacation id");
                 return new ResponseEntity<APIResponse>(apiResponse, HttpStatus.BAD_REQUEST);
             }
-            WFM_PUBLIC_VAC result = wfmPublicVacService.insertWFMVac(wfm_PUBLIC_VAC_Req);
+            WFM_PUBLIC_VAC_Search_Response result = wfmPublicVacService.insertWFMVac(wfm_PUBLIC_VAC_Req);
             if (Objects.isNull(result)) {
                 apiResponse.setStatus(HttpStatus.BAD_REQUEST);
                 apiResponse.setStatusCode(HttpStatus.BAD_REQUEST.value());
@@ -98,6 +99,7 @@ public class WFM_PUBLIC_VAC_Controller_Impl implements WFM_PUBLIC_VAC_Controller
             } else {
                 apiResponse.setStatus(HttpStatus.OK);
                 apiResponse.setStatusCode(HttpStatus.OK.value());
+                apiResponse.setClientMessage("Vacation Inserted Successfully");
                 apiResponse.setBody(result);
                 return new ResponseEntity<APIResponse>(apiResponse, HttpStatus.OK);
             }
@@ -125,9 +127,25 @@ public class WFM_PUBLIC_VAC_Controller_Impl implements WFM_PUBLIC_VAC_Controller
             } else {
                 apiResponse.setStatus(HttpStatus.OK);
                 apiResponse.setStatusCode(HttpStatus.OK.value());
-                apiResponse.setBody("vacation deleted successfully");
+                apiResponse.setClientMessage("vacation deleted successfully");
                 return new ResponseEntity<APIResponse>(apiResponse, HttpStatus.OK);
             }
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            apiResponse.setStatus(HttpStatus.INTERNAL_SERVER_ERROR);
+            apiResponse.setStatusCode(HttpStatus.INTERNAL_SERVER_ERROR.value());
+            apiResponse.setClientMessage(ex.getMessage());
+            apiResponse.setDeveloperMessage(ex.getCause().toString());
+            return new ResponseEntity<APIResponse>(apiResponse, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @Override
+    public ResponseEntity<APIResponse> getWFMVacById(String vacationId) {
+        APIResponse apiResponse = new APIResponse();
+        try {
+            return wfmPublicVacService.getWFMVacById(vacationId);
 
         } catch (Exception ex) {
             ex.printStackTrace();

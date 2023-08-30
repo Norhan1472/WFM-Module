@@ -21,7 +21,6 @@ public class WFM_CALENDER_SHIFT_Controller_Impl implements WFM_CALENDER_SHIFT_Co
     public ResponseEntity<APIResponse> insertShift(WFM_CALENDER_SHIFT_Insert_Req shift_insert_req) {
         APIResponse apiResponse = new APIResponse();
         try {
-            System.out.println("kkiioo");
             return shift_service.insertGroupShiftInQuery(shift_insert_req);
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -37,7 +36,6 @@ public class WFM_CALENDER_SHIFT_Controller_Impl implements WFM_CALENDER_SHIFT_Co
     public ResponseEntity<APIResponse> deleteShift(long empId) {
         APIResponse apiResponse = new APIResponse();
         try {
-            System.out.println("kkiioo");
             return shift_service.deleteShift(empId);
         } catch (Exception ex) {
             ex.printStackTrace();

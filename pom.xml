@@ -11,11 +11,11 @@
 		<version>2.5.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>mts.GIS</groupId>
-	<artifactId>TEMP</artifactId>
+	<groupId>WFM</groupId>
+	<artifactId>WFM</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>TEMP</name>
-	<description>TEMP</description>
+	<name>WFM</name>
+	<description>WFM</description>
 	<properties>
 	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -48,7 +48,7 @@
 		<dependency>
 		    <groupId>org.springframework.boot</groupId>
 		    <artifactId>spring-boot-starter-tomcat</artifactId>
-		    <!--<scope>provided</scope>-->
+		    <scope>provided</scope>
 
 		    <exclusions>
 				<exclusion>

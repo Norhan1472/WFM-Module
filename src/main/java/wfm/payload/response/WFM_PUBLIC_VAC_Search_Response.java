@@ -15,4 +15,5 @@ public class WFM_PUBLIC_VAC_Search_Response {
     private String vacationName;
     private String vacationTypeId;
     private String startDate;
+    private long numDays;
 }

@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import wfm.globalControllers.WFM_EMP_Controller;
 import wfm.models.WFM_EMP;
 import wfm.models.WFM_SKILL_LEVEL;
+import wfm.payload.request.WFM_EMP_Request;
 import wfm.payload.response.APIResponse;
 import wfm.services.WFM_EMP_Service;
 
@@ -21,7 +22,7 @@ public class WFM_EMP_Controller_Impl implements WFM_EMP_Controller {
     }
 
     @Override
-    public ResponseEntity<APIResponse> insertEmployee(WFM_EMP emp) {
+    public ResponseEntity<APIResponse> insertEmployee(WFM_EMP_Request emp) {
         APIResponse apiResponse = new APIResponse();
         System.out.println("lll");
         try {
@@ -37,7 +38,7 @@ public class WFM_EMP_Controller_Impl implements WFM_EMP_Controller {
     }
 
     @Override
-    public ResponseEntity<APIResponse> updateEmployee(WFM_EMP emp) {
+    public ResponseEntity<APIResponse> updateEmployee(WFM_EMP_Request emp) {
         APIResponse apiResponse = new APIResponse();
         try {
             return empService.updateEmployee(emp);
@@ -56,6 +57,20 @@ public class WFM_EMP_Controller_Impl implements WFM_EMP_Controller {
         APIResponse apiResponse = new APIResponse();
         try {
             return empService.deleteEmployee(empId);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            apiResponse.setStatus(HttpStatus.INTERNAL_SERVER_ERROR);
+            apiResponse.setStatusCode(HttpStatus.INTERNAL_SERVER_ERROR.value());
+            apiResponse.setClientMessage(ex.getMessage());
+            apiResponse.setDeveloperMessage(ex.getCause().toString());
+            return new ResponseEntity<APIResponse>(apiResponse, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+    @Override
+    public ResponseEntity<APIResponse>initData(){
+        APIResponse apiResponse = new APIResponse();
+        try {
+            return empService.initData();
         } catch (Exception ex) {
             ex.printStackTrace();
             apiResponse.setStatus(HttpStatus.INTERNAL_SERVER_ERROR);
