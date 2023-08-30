@@ -7,13 +7,17 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="TEMP" />
+        <module name="WFM" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="TEMP" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="TEMP" options="-parameters" />
+      <module name="WFM" options="-parameters" />
     </option>
   </component>
 </project>
