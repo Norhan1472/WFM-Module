@@ -10,4 +10,5 @@ public interface WFM_EMP_Service {
     public ResponseEntity<APIResponse> updateEmployee(WFM_EMP_Request emp);
     public ResponseEntity<APIResponse> deleteEmployee(long empId);
     public ResponseEntity<APIResponse> initData();
+    public ResponseEntity<APIResponse> getEmployeeById(long empId);
 }

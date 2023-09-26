@@ -14,10 +14,10 @@ import java.util.List;
 @Getter
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class InitEmployeeData {
-    private List<TGH_POST_OFFICE>offices;
+//    private List<TGH_POST_OFFICE>offices;
+//      private List<TGH_CITY>cities;S
     private List<WFM_SKILL_LEVEL>levels;
     private List<WFM_LABOR_TYPE>laborTypes;
-    private List<TGH_CITY>cities;
     private List<WFM_JOBS>jobs;
     private List<WFM_JOB_TITLE>jobTitles;
     private List<WFM_QUALIFICATION>qualifications;

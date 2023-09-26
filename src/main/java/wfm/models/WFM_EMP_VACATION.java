@@ -17,11 +17,6 @@ import java.util.Date;
 public class WFM_EMP_VACATION {
     @Id
     @Column(name = "VACATION_ID")
-    /*@GeneratedValue(generator = "WFM_EMP_VACATION_SEQ",strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(sequenceName = "WFM_EMP_VACATION_SEQ",name = "WFM_EMP_VACATION_SEQ",allocationSize = 1)*/
-    /*@GeneratedValue(generator = "WFM_EMP_VACATION_SEQ")
-    @GenericGenerator(name = "WFM_EMP_VACATION_SEQ", strategy = "org.hibernate.id.UUIDGenerator")
-    @Column(name = "VACATION_ID", updatable = false, nullable = false)*/
     private String vacationId;
     @Column(name = "NO_DAYS")
     private Long noDays;

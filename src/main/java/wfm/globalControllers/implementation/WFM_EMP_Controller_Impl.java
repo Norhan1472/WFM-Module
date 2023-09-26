@@ -80,4 +80,21 @@ public class WFM_EMP_Controller_Impl implements WFM_EMP_Controller {
             return new ResponseEntity<APIResponse>(apiResponse, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+    @Override
+    public ResponseEntity<APIResponse> getEmployeeById(long empId) {
+        APIResponse apiResponse = new APIResponse();
+        try {
+            return empService.getEmployeeById(empId);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            apiResponse.setStatus(HttpStatus.INTERNAL_SERVER_ERROR);
+            apiResponse.setStatusCode(HttpStatus.INTERNAL_SERVER_ERROR.value());
+            apiResponse.setClientMessage(ex.getMessage());
+            apiResponse.setDeveloperMessage(ex.getCause().toString());
+            return new ResponseEntity<APIResponse>(apiResponse, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+
 }

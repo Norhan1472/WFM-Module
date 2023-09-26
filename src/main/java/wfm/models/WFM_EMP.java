@@ -40,10 +40,10 @@ public class WFM_EMP {
     @Column(name = "ADDRESS")
     private String address;
     @Column(name = "BIRTHDATE")
-    @JsonFormat(pattern = "dd-mm-yyyy")
+    @JsonFormat(pattern = "dd-MM-yyyy")
     private Date birthdate;
     @Column(name = "HIRE_DATE")
-    @JsonFormat(pattern = "dd-mm-yyyy")
+    @JsonFormat(pattern = "dd-MM-yyyy")
     private Date hireDate;
     @Column(name = "CITY")
     private String city;
@@ -58,7 +58,7 @@ public class WFM_EMP {
     @Column(name = "DEGREE")
     private Long degree;
     @Column(name = "QUALIFICATION_DATE")
-    @JsonFormat(pattern = "dd-mm-yyyy")
+    @JsonFormat(pattern = "dd-MM-yyyy")
     private Date qualificationDate;
     @Column(name = "QUALIFICATION_ID")
     private Long qualification;
@@ -74,5 +74,5 @@ public class WFM_EMP {
     private String cardId;
     @OneToMany(mappedBy = "wfm_emp")//fetch = FetchType.EAGER,
     @JsonIgnore
-    private Set<WFM_CALENDER_SHIFT> wfm_calender_shifts = new HashSet<>();
+    private Set<WFM_CALENDAR_SHIFT> wfm_calender_shifts = new HashSet<>();
 }

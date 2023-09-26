@@ -18,11 +18,13 @@ import java.util.Set;
 @Getter
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class WFM_CALENDER_SHIFT_Insert_Req {
+    private String officeCode;
     private String wfm_shifts;
     private String startHour;
     @JsonFormat(pattern = "dd-MM-yyyy")
     private String dateFrom;
     @JsonFormat(pattern = "dd-MM-yyyy")
     private String dateTo;
-    private Set<Long>wfm_emps = new HashSet<>();
+   // private Set<Long>wfm_emps = new HashSet<>();
+    private Long wfm_emp;
 }

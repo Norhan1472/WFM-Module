@@ -16,4 +16,6 @@ public interface WFM_EMP_Controller {
     public ResponseEntity<APIResponse> deleteEmployee(@RequestParam long empId);
     @GetMapping("initData")
     public ResponseEntity<APIResponse>initData();
+    @GetMapping("getEmployeeById")
+    public ResponseEntity<APIResponse>getEmployeeById(@RequestParam long empId);
 }

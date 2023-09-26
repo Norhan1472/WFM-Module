@@ -1,5 +1,6 @@
 package wfm.models;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,7 +16,7 @@ import java.util.Date;
 @Setter
 @Getter
 @Table(name = "WFM_CALENDAR_SHIFT")
-public class WFM_CALENDER_SHIFT {
+public class WFM_CALENDAR_SHIFT {
     @Id
     @Column(name = "SHIFT_START")
     private Date shiftStart; // primary

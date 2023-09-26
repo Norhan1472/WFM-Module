@@ -1,9 +1,18 @@
 package wfm.wrapper;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import wfm.models.*;
 import wfm.payload.request.WFM_EMP_Request;
 import wfm.payload.response.CustomEmployeeData;
+import wfm.payload.response.CustomEmployeeFullData;
 import wfm.payload.response.OFFICES_Search_Response;
+import wfm.repos.WFM_DEGREES_Repo;
+import wfm.repos.WFM_JOBS_Repo;
+import wfm.repos.WFM_JOB_TITLE_Repo;
+import wfm.repos.WFM_QUALIFICATION_Repo;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -12,7 +21,56 @@ import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
+//@AllArgsConstructor
+//@NoArgsConstructor
 public class MapEmployees {
+//    @Autowired
+//    WFM_DEGREES_Repo wfm_degrees_repo;
+//    @Autowired
+//    WFM_QUALIFICATION_Repo wfm_qualification_repo;
+//    @Autowired
+//    WFM_JOBS_Repo wfm_jobs_repo;
+//    @Autowired
+//    WFM_JOB_TITLE_Repo wfm_job_title_repo;
+
+
+    public CustomEmployeeFullData mapToFullDataResponse(WFM_EMP emp,Long degree,Long qualification,Long jobTitle,Integer job,String officeName) {
+        CustomEmployeeFullData response = new CustomEmployeeFullData();
+        response.setEmpId(emp.getEmpId());
+        response.setFirstName(emp.getFirstName());
+        response.setLastName(emp.getLastName());
+        response.setGender(emp.getGender());
+        response.setPhone(emp.getPhone());
+        response.setAddress(emp.getAddress());
+        DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+        String birthDate = "";
+        if(emp.getBirthdate()!=null){
+            birthDate = dateFormat.format(emp.getBirthdate());
+        }
+        response.setBirthDate(birthDate);
+        response.setCardId(emp.getCardId());
+        String hireDate = "";
+        if(emp.getHireDate()!=null){
+            hireDate = dateFormat.format(emp.getHireDate());
+        }
+        response.setHireDate(hireDate);
+        response.setCity(emp.getCity());
+        response.setLevelId(emp.getSkillLevel().getLevelId());
+        response.setLaborType(emp.getLaborType().getLaborTypeId());
+        response.setDegree(degree);
+        String qualificationDate = "";
+        if(emp.getQualificationDate()!=null){
+            qualificationDate = dateFormat.format(emp.getQualificationDate());
+        }
+        response.setQualificationDate(qualificationDate);
+        response.setQualification(qualification);
+        response.setJobTitle(jobTitle);
+        response.setJob(job);
+        response.setLocation(emp.getLocation());
+        response.setCivil(emp.getCivil());
+        response.setPostOffice(officeName);
+        return response;
+    }
     public CustomEmployeeData mapToResponse(WFM_EMP emp) {
         CustomEmployeeData response = new CustomEmployeeData();
         response.setEmpId(emp.getEmpId());
@@ -89,7 +147,7 @@ public class MapEmployees {
         if(!(emp.getCity() == null || emp.getCity() == "")){
             TGH_CITY city = new TGH_CITY();
             city.setCityCode(emp.getCity());
-            wfmEmp.setCity(city.getCityName());
+            wfmEmp.setCity(city.getCityCode());
         }
         // skill level
         if(!(emp.getLevelId() == null || emp.getLevelId() == "")){
@@ -115,21 +173,22 @@ public class MapEmployees {
             wfmEmp.setQualificationDate(qualificationDate);
         }
         //qualification
-        if(!(emp.getQualification() == 0)){
+        if(emp.getQualification() != 0){
             wfmEmp.setQualification(emp.getQualification());
         }
         //job title
-        if(!(emp.getJobTitle() == 0)){
+        if((emp.getJobTitle() != 0)){
             wfmEmp.setJobTitle(emp.getJobTitle());
         }
         // job
-        if(!(emp.getJob() == 0)){
-            wfmEmp.setJobTitle(emp.getJob());
+        if((emp.getJob() != 0)){
+            wfmEmp.setJob((int) emp.getJob());
         }
         //civil
         wfmEmp.setCivil(emp.getCivil());
         //location
         wfmEmp.setLocation(emp.getLocation());
+        wfmEmp.setAddress(emp.getAddress());
         return wfmEmp;
     }
 }

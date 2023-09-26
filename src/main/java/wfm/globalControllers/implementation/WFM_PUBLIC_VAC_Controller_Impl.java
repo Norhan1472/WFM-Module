@@ -92,10 +92,10 @@ public class WFM_PUBLIC_VAC_Controller_Impl implements WFM_PUBLIC_VAC_Controller
             }
             WFM_PUBLIC_VAC_Search_Response result = wfmPublicVacService.insertWFMVac(wfm_PUBLIC_VAC_Req);
             if (Objects.isNull(result)) {
-                apiResponse.setStatus(HttpStatus.BAD_REQUEST);
-                apiResponse.setStatusCode(HttpStatus.BAD_REQUEST.value());
+                apiResponse.setStatus(HttpStatus.OK);
+                apiResponse.setStatusCode(HttpStatus.OK.value());
                 apiResponse.setClientMessage("Duplicated vacation id");
-                return new ResponseEntity<APIResponse>(apiResponse, HttpStatus.BAD_REQUEST);
+                return new ResponseEntity<APIResponse>(apiResponse, HttpStatus.OK);
             } else {
                 apiResponse.setStatus(HttpStatus.OK);
                 apiResponse.setStatusCode(HttpStatus.OK.value());

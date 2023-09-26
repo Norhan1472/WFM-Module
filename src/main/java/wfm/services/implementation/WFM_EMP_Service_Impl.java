@@ -9,11 +9,13 @@ import wfm.payload.request.InitEmployeeData;
 import wfm.payload.request.WFM_EMP_Request;
 import wfm.payload.response.APIResponse;
 import wfm.payload.response.CustomEmployeeData;
+import wfm.payload.response.CustomEmployeeFullData;
 import wfm.repos.*;
 import wfm.services.WFM_EMP_Service;
 import wfm.wrapper.MapEmployees;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -30,6 +32,18 @@ public class WFM_EMP_Service_Impl implements WFM_EMP_Service {
     private final WFM_QUALIFICATION_Repo qualificationRepo;
     private final WFM_DEGREES_Repo degreesRepo;
     private final WFM_GENDER_Repo genderRepo;
+//    @Autowired
+//    private MapEmployees mapEmployees;
+    @Autowired
+    WFM_DEGREES_Repo wfm_degrees_repo;
+    @Autowired
+    WFM_QUALIFICATION_Repo wfm_qualification_repo;
+    @Autowired
+    WFM_JOBS_Repo wfm_jobs_repo;
+    @Autowired
+    WFM_JOB_TITLE_Repo wfm_job_title_repo;
+    @Autowired
+    TGH_POST_OFFICE_Repo tgh_post_office_repo;
     @Autowired
     public WFM_EMP_Service_Impl(WFM_EMP_Repo empRepo, TGH_POST_OFFICE_Repo tghPostOfficeRepo, TGH_CITY_Repo cityRepo, WFM_SKILL_LEVEL_Repo levelsRepo, WFM_LABOR_TYPE_Repo laborTypesRepo, WFM_JOBS_Repo jobsRepo, WFM_JOB_TITLE_Repo jobTitleRepo, WFM_QUALIFICATION_Repo qualificationRepo, WFM_DEGREES_Repo degreesRepo, WFM_GENDER_Repo genderRepo) {
         this.empRepo = empRepo;
@@ -80,9 +94,12 @@ public class WFM_EMP_Service_Impl implements WFM_EMP_Service {
                 return new ResponseEntity<APIResponse>(apiResponse, HttpStatus.BAD_REQUEST);
             }
              else {
+                System.out.println("emp.getJob() "+emp.getJob());
                 WFM_EMP wfmEmp=  new WFM_EMP();
                 MapEmployees mapEmployees = new MapEmployees();
                 wfmEmp = mapEmployees.mapToResponse(emp);
+                System.out.println("123");
+                System.out.println(wfmEmp.getJob());
                 WFM_EMP employee = empRepo.save(wfmEmp);
                 CustomEmployeeData result = mapEmployees.mapToResponse(employee);
                 apiResponse.setStatus(HttpStatus.OK);
@@ -178,7 +195,7 @@ public class WFM_EMP_Service_Impl implements WFM_EMP_Service {
                 empRepo.deleteById(empId);
                 apiResponse.setStatus(HttpStatus.OK);
                 apiResponse.setStatusCode(HttpStatus.OK.value());
-                apiResponse.setBody("Employee Deleted Successfully");
+                apiResponse.setClientMessage("Employee Deleted Successfully");
                 return new ResponseEntity<APIResponse>(apiResponse, HttpStatus.OK);
             }
         } catch (Exception ex) {
@@ -197,11 +214,11 @@ public class WFM_EMP_Service_Impl implements WFM_EMP_Service {
         try {
              InitEmployeeData initEmployeeData = new InitEmployeeData();
              //offices
-            List<TGH_POST_OFFICE>offices = tghPostOfficeRepo.findAll();
-            initEmployeeData.setOffices(offices);
-            //cities
-            List<TGH_CITY>cities = cityRepo.findAll();
-            initEmployeeData.setCities(cities);
+//            List<TGH_POST_OFFICE>offices = tghPostOfficeRepo.findAll();
+//            initEmployeeData.setOffices(offices);
+//            //cities
+//            List<TGH_CITY>cities = cityRepo.findAll();
+//            initEmployeeData.setCities(cities);
             //levels
             List<WFM_SKILL_LEVEL>levels = levelsRepo.findAll();
             initEmployeeData.setLevels(levels);
@@ -228,6 +245,65 @@ public class WFM_EMP_Service_Impl implements WFM_EMP_Service {
             apiResponse.setBody(initEmployeeData);
             return new ResponseEntity<APIResponse>(apiResponse, HttpStatus.OK);
 
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            apiResponse.setStatus(HttpStatus.INTERNAL_SERVER_ERROR);
+            apiResponse.setStatusCode(HttpStatus.INTERNAL_SERVER_ERROR.value());
+            apiResponse.setClientMessage(ex.getMessage());
+            apiResponse.setDeveloperMessage(ex.getCause().toString());
+            return new ResponseEntity<APIResponse>(apiResponse, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @Override
+    public ResponseEntity<APIResponse> getEmployeeById(long empId) {
+        APIResponse apiResponse = new APIResponse();
+        try {
+            if(empId == 0){
+                apiResponse.setStatus(HttpStatus.BAD_REQUEST);
+                apiResponse.setStatusCode(HttpStatus.BAD_REQUEST.value());
+                apiResponse.setClientMessage("You Must Enter employee Id ");
+                return new ResponseEntity<APIResponse>(apiResponse, HttpStatus.BAD_REQUEST);
+            }
+            WFM_EMP checkExistEmp = empRepo.findById(empId).orElse(null);
+            if(Objects.isNull(checkExistEmp)){
+                apiResponse.setStatus(HttpStatus.OK);
+                apiResponse.setStatusCode(HttpStatus.OK.value());
+                apiResponse.setClientMessage("This Employee id is not exist ");
+                apiResponse.setBody(new ArrayList<>());
+
+                return new ResponseEntity<APIResponse>(apiResponse, HttpStatus.OK);
+            }
+
+            else {
+                MapEmployees mapEmployees = new MapEmployees();
+                Long degree =checkExistEmp.getDegree();
+//                if(checkExistEmp.getDegree()!=null){
+//                    degree =  wfm_degrees_repo.findById(checkExistEmp.getDegree()).get().getDegreeDesc();
+//                }
+                Long qualification = checkExistEmp.getQualification();
+//                if(checkExistEmp.getQualification()!=null){
+//                    qualification = wfm_qualification_repo.findById(checkExistEmp.getQualification()).get().getQualificationName();
+//                }
+                Long jobTitle = checkExistEmp.getJobTitle();
+//                if(checkExistEmp.getJobTitle()!=null){
+//                    jobTitle = wfm_job_title_repo.findById(checkExistEmp.getJobTitle()).get().getJobTitleName();
+//                }
+                Integer job=checkExistEmp.getJob();
+//                if(checkExistEmp.getJob()!=null){
+//                     job = wfm_jobs_repo.findById(Long.valueOf(checkExistEmp.getJob())).get().getJobName();
+//                }
+                String officeName =checkExistEmp.getPostOffice().getOfficeCode();
+//                if(checkExistEmp.getPostOffice()!=null){
+//                    officeName = tgh_post_office_repo.findById(checkExistEmp.getPostOffice().getOfficeCode()).get().getOfficeName();
+//                }
+
+                CustomEmployeeFullData result = mapEmployees.mapToFullDataResponse(checkExistEmp,degree,qualification,jobTitle,job,officeName);
+                apiResponse.setStatus(HttpStatus.OK);
+                apiResponse.setStatusCode(HttpStatus.OK.value());
+                apiResponse.setBody(result);
+                return new ResponseEntity<APIResponse>(apiResponse, HttpStatus.OK);
+            }
         } catch (Exception ex) {
             ex.printStackTrace();
             apiResponse.setStatus(HttpStatus.INTERNAL_SERVER_ERROR);

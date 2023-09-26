@@ -25,5 +25,5 @@ public class WFM_SHIFTS {
     private long duration;
     @OneToMany(mappedBy = "wfm_shifts")//fetch = FetchType.EAGER,
     @JsonIgnore
-    private Set<WFM_CALENDER_SHIFT>wfm_calender_shifts = new HashSet<>();
+    private Set<WFM_CALENDAR_SHIFT>wfm_calender_shifts = new HashSet<>();
 }
