@@ -144,8 +144,9 @@ public class WFM_CALENDER_SHIFT_Service_Impl implements WFM_CALENDER_SHIFT_Servi
         StringBuilder queryBuilder = new StringBuilder("INSERT ALL ");
         APIResponse apiResponse = new APIResponse();
         List<Object> queryParams = new ArrayList<>();
-        Date dateTo =new SimpleDateFormat("dd-MM-yyyy HH:mm:ss").parse(shift_insert_req.getDateTo());
-        Date dateFrom =new SimpleDateFormat("dd-MM-yyyy HH:mm:ss").parse(shift_insert_req.getDateFrom());
+        System.out.println("jk98");
+        Date dateTo =new SimpleDateFormat("dd-MM-yyyy").parse(shift_insert_req.getDateTo());
+        Date dateFrom =new SimpleDateFormat("dd-MM-yyyy").parse(shift_insert_req.getDateFrom());
         //validation date from and date to
         if(dateFrom.after(dateTo)){
             apiResponse.setStatus(HttpStatus.OK);
@@ -182,6 +183,9 @@ public class WFM_CALENDER_SHIFT_Service_Impl implements WFM_CALENDER_SHIFT_Servi
             return new ResponseEntity<APIResponse>(apiResponse, HttpStatus.BAD_REQUEST);
         }
         else{
+            System.out.println("kkk789654");
+            System.out.println(dateTo);
+            System.out.println(dateFrom);
             List<Long>ids = new ArrayList<>();
             if(shift_insert_req.getOfficeCode().isEmpty()){
                 System.out.println("k123");
